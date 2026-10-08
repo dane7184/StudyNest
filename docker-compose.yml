@@ -1,0 +1,29 @@
+# Local dev infrastructure for StudyNest.
+# PostgreSQL runs on your own machine (database study_nest), not in Docker.
+#
+#   docker compose up -d      start
+#   docker compose down       stop (Keycloak data is kept in the keycloak-data volume)
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:25.0.6   # same version as keycloak-admin-client in libs.versions.toml
+    container_name: studynest-keycloak
+    command: start-dev
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8080:8080"
+    volumes:
+      - keycloak-data:/opt/keycloak/data   # realm, users, clients survive restarts
+
+  mailpit:
+    # Catches every email Keycloak sends (first-login, password reset). Web UI on http://localhost:8025
+    image: axllent/mailpit:latest
+    container_name: studynest-mailpit
+    ports:
+      - "8025:8025"   # web UI
+      - "1025:1025"   # SMTP
+
+volumes:
+  keycloak-data:

@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/study_nest}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:1234}
+  # study_nest's "public" schema already holds other tables, so keep this service in its own schema
+  flyway:
+    schemas: dashboard
+    default-schema: dashboard
+  jpa:
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+      hibernate.default_schema: dashboard
+
+logging:
+  level:
+    com.client.lms: DEBUG
+    org.springframework.security: INFO

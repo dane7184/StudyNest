@@ -1,0 +1,52 @@
+{
+  "groups": [
+    {
+      "name": "lms.keycloak",
+      "type": "com.client.lms.dashboard.config.KeycloakProperties",
+      "sourceType": "com.client.lms.dashboard.config.KeycloakProperties"
+    },
+    {
+      "name": "lms.services",
+      "type": "com.client.lms.dashboard.config.ServiceClientProperties",
+      "sourceType": "com.client.lms.dashboard.config.ServiceClientProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "lms.keycloak.admin-client-id",
+      "type": "java.lang.String",
+      "sourceType": "com.client.lms.dashboard.config.KeycloakProperties"
+    },
+    {
+      "name": "lms.keycloak.admin-client-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.client.lms.dashboard.config.KeycloakProperties"
+    },
+    {
+      "name": "lms.keycloak.app-client-id",
+      "type": "java.lang.String",
+      "sourceType": "com.client.lms.dashboard.config.KeycloakProperties"
+    },
+    {
+      "name": "lms.keycloak.realm",
+      "type": "java.lang.String",
+      "sourceType": "com.client.lms.dashboard.config.KeycloakProperties"
+    },
+    {
+      "name": "lms.keycloak.server-url",
+      "type": "java.lang.String",
+      "sourceType": "com.client.lms.dashboard.config.KeycloakProperties"
+    },
+    {
+      "name": "lms.services.classroom-base-url",
+      "type": "java.lang.String",
+      "sourceType": "com.client.lms.dashboard.config.ServiceClientProperties"
+    },
+    {
+      "name": "lms.services.processing-base-url",
+      "type": "java.lang.String",
+      "sourceType": "com.client.lms.dashboard.config.ServiceClientProperties"
+    }
+  ],
+  "hints": []
+}
